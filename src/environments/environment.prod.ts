@@ -1,5 +1,4 @@
 export const environment = {
-    production: false,
-    apiUrl: 'http://localhost:4000'
+    production: true,
+    apiUrl: 'https://seaborg-ipt-2026-backend.onrender.com'
 };
-
