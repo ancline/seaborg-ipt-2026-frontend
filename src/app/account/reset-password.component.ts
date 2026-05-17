@@ -39,7 +39,7 @@ export class ResetPasswordComponent implements OnInit {
 
         const token = this.route.snapshot.queryParams['token'];
 
-        this.router.navigate([], { relativeTo: this.route, replaceUrl: true });
+        
 
         this.accountService.validateResetToken(token)
             .pipe(first())
