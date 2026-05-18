@@ -1,6 +1,6 @@
 <li>{{title}}</li>
 
-<form ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="mb-3 col-2">
       <label class="form-label">Title</label>
@@ -73,7 +73,7 @@
 
     <div class="mb-3 col-5">
       <label class="form-label">Confirm Password</label>
-      <input formControlName="confirmPassword" type="text/password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+      <input formControlName="confirmPassword" type="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
       <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
         <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
         <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
