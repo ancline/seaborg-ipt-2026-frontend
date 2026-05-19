@@ -45,10 +45,12 @@ export class ResetPasswordComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: () => {
+                    console.log('Token valid!');
                     this.token = token;
                     this.tokenStatus = TokenStatus.Valid;
                 },
-                error: () => {
+                error: (err) => {
+                    console.log('Token invalid:', err);
                     this.tokenStatus = TokenStatus.Invalid;
                 }
             });
